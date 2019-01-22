@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/media_list.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -6,6 +7,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+
   List<BottomNavigationBarItem> _getFooterItems(){
       return[
         new BottomNavigationBarItem(
@@ -65,6 +68,11 @@ class _HomeState extends State<Home> {
 
       bottomNavigationBar: new BottomNavigationBar(
         items: _getFooterItems(),
+      ),
+      body: new PageView(
+        children: <Widget>[
+          new MediaList(),
+        ],
       ),
     );
   }
